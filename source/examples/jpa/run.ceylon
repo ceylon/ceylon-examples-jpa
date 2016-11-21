@@ -40,14 +40,19 @@ shared void run() {
 
     //Use the JPA EntityManager directly
     value em3 = emf.createEntityManager();
-    value breed1 = em3.getReference(`Breed`, javaString("Labrador"));
-    breed1.dogs.map(Dog.name).each(print);
+    em3.getReference(`Breed`, 
+                     javaString("Labrador"))
+            .dogs
+            .map(Dog.name)
+            .each(print);
     em3.close();
 
     //Use the EntityManager facade from ceylon.interop.persistence
     value em4 = EntityManager(emf.createEntityManager());
-    value breed2 = em4.getReference(`Breed`, "Labrador");
-    breed2.dogs.map(Dog.name).each(print);
+    em4.getReference(`Breed`, "Labrador")
+            .dogs
+            .map(Dog.name)
+            .each(print);
     em4.close();
 
     emf.close();
