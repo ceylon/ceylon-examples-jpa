@@ -16,6 +16,7 @@ EntityManagerFactory emf
 shared void run() {
 
     Breed labrador;
+
     value em1 = emf.createEntityManager();
     try {
         em1.transaction.begin();
@@ -23,10 +24,12 @@ shared void run() {
         labrador = Breed("Labrador");
         em1.persist(labrador);
 
-        value jake = Dog("Jake", labrador);
-        value sadie = Dog("Sadie", labrador);
-        value zanjeer = Dog("Zanjeer", labrador);
-        { jake, sadie, zanjeer }.each(em1.persist);
+        {
+            Dog("Jake", labrador),
+            Dog("Sadie", labrador),
+            Dog("Zanjeer", labrador)
+        }
+        .each(em1.persist);
 
         em1.transaction.commit();
     }
@@ -38,7 +41,10 @@ shared void run() {
     value em2 = emf.createEntityManager();
     try {
         value dogs =
-                em2.createQuery("from Dog dog where dog.breed=?", `Dog`)
+                em2.createQuery(
+                    "from Dog dog
+                     where dog.breed=?",
+                    `Dog`)
                    .setParameter(1, labrador)
                    .resultList;
         for (dog in dogs) {
@@ -53,7 +59,10 @@ shared void run() {
     // ceylon.interop.persistence
     try (em = EntityManager.create(emf)) {
         value dogs =
-                em.createTypedQuery("from Dog dog where dog.breed=?", `Dog`)
+                em.createTypedQuery(
+                    "from Dog dog
+                     where dog.breed=?",
+                    `Dog`)
                   .setPositionalArguments(labrador)
                   .getResults();
         dogs.map(Dog.name).each(print);
@@ -74,8 +83,7 @@ shared void run() {
     // Retrieve an instance via the EntityManager facade from
     // ceylon.interop.persistence
     try (em = EntityManager.create(emf)) {
-        if (exists breed
-                = em.find(`Breed`, "Labrador")) {
+        if (exists breed = em.find(`Breed`, "Labrador")) {
             breed.dogs.map(Dog.name).each(print);
         }
     }
