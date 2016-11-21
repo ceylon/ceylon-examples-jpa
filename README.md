@@ -15,7 +15,10 @@ may be selected by editing `overrides.xml` and
 ## Requirements
 
 This example requires Java 8 and [Ceylon 1.3.1] 
-or Ceylon IDE 1.3.1 for Eclipse or IntelliJ.
+or Ceylon IDE 1.3.1 for Eclipse or IntelliJ. On
+the command line you can use the provided `ceylonb`
+command if you don't have Ceylon already installed.
+
 
 [Ceylon 1.3.1]: https://ceylon-lang.org/download
 
@@ -23,7 +26,7 @@ or Ceylon IDE 1.3.1 for Eclipse or IntelliJ.
 
 In this directory, type:
 
-    ceylon run --compile examples.jpa
+    ./ceylonb run examples.jpa
 
 Or simply import the project into Ceylon IDE and
 run it from within the IDE.

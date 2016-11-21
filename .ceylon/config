@@ -3,6 +3,10 @@
 source=source
 resource=resource
 
+[runtool]
+module=examples.jpa
+compile=check
+
 [defaults]
 offline=false
 flatclasspath=false
