@@ -3,12 +3,14 @@
 This project contains a really simple example of 
 the use of the Java Persistence API in Ceylon, 
 along with the optional use of the helper module
-ceylon.interop.persistence.
+`ceylon.interop.persistence`.
 
-By default, the example uses Hibernate as the JPA 
-provider. A different persistence provider may be
-selected by editing `overrides.xml` and 
+By default, the example uses [Hibernate] as the 
+JPA provider. A different persistence provider 
+may be selected by editing `overrides.xml` and 
 `persistence.xml`.
+
+[Hibernate]: http://hibernate.org
 
 ## Requirements
 
