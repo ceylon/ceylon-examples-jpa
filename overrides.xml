@@ -1,0 +1,22 @@
+<overrides xmlns="http://www.ceylon-lang.org/xsd/overrides">
+
+    <!-- Add dependency to Hibernate JPA here. -->
+
+    <module module="examples.jpa">
+        <add groupId="org.hibernate"
+              artifactId="hibernate-entitymanager"
+              version="5.0.4.Final"/>
+        <add groupId="org.hsqldb"
+             artifactId="hsqldb"
+             version="2.3.1"/>
+    </module>
+
+    <module groupId="org.hibernate"
+            artifactId="hibernate-core">
+        <add groupId="javax.transaction"
+             artifactId="jta"
+             version="1.1"
+             shared="true"/>
+    </module>
+
+</overrides>

@@ -1,0 +1,11 @@
+
+[compiler]
+source=source
+resource=resource
+
+[defaults]
+offline=false
+flatclasspath=false
+autoexportmavendependencies=true
+fullyexportmavendependencies=false
+overrides=overrides.xml
