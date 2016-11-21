@@ -1,3 +1,4 @@
 /classes/
 /.exploded/
 /modules/
+*.jar

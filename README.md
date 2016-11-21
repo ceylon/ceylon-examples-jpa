@@ -36,8 +36,8 @@ run it from within the IDE.
 To run the example using `java`, compile the 
 example and assemble an executable  "fat" `.jar`:
 
-    ceylon compile
-    ceylon fat-jar examples.jpa
+    ./ceylonb compile
+    ./ceylonb fat-jar examples.jpa
 
 Then run the `.jar`:
 
