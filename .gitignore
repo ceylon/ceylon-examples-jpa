@@ -2,3 +2,4 @@
 /.exploded/
 /modules/
 *.jar
+*.cas

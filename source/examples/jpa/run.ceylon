@@ -1,8 +1,11 @@
-import ceylon.interop.java {
-    javaString
-}
 import ceylon.interop.persistence {
     EntityManager
+}
+
+import java.lang {
+    Types {
+        nativeString
+    }
 }
 
 import javax.persistence {
@@ -43,7 +46,7 @@ shared void run() {
         value dogs =
                 em2.createQuery(
                     "from Dog dog
-                     where dog.breed=?",
+                     where dog.breed=?1",
                     `Dog`)
                    .setParameter(1, labrador)
                    .resultList;
@@ -61,7 +64,7 @@ shared void run() {
         value dogs =
                 em.createTypedQuery(
                     "from Dog dog
-                     where dog.breed=?",
+                     where dog.breed=?1",
                     `Dog`)
                   .setPositionalArguments(labrador)
                   .getResults();
@@ -72,7 +75,7 @@ shared void run() {
     value em3 = emf.createEntityManager();
     try {
         if (exists breed
-                = em3.find(`Breed`, javaString("Labrador"))) {
+                = em3.find(`Breed`, nativeString("Labrador"))) {
             breed.dogs.map(Dog.name).each(print);
         }
     }

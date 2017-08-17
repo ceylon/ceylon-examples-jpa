@@ -6,5 +6,5 @@ module examples.jpa "1.0.0" {
     //don't hardcode dependency to Hibernate here
     //use overrides.xml instead
 
-    import ceylon.interop.persistence "1.3.2";
+    import ceylon.interop.persistence "1.3.3-SNAPSHOT";
 }
