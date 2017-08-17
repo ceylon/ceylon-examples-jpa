@@ -1,14 +1,20 @@
 <overrides xmlns="http://www.ceylon-lang.org/xsd/overrides">
 
-    <!-- Add dependency to Hibernate JPA here. -->
-
     <module module="examples.jpa">
+
+        <!-- Add dependency to Hibernate JPA
+             (or other JPA implementation) here. -->
+
         <add groupId="org.hibernate"
               artifactId="hibernate-core"
               version="5.2.10.Final"/>
+
+        <!-- Add dependency to database driver here. -->
+
         <add groupId="org.hsqldb"
              artifactId="hsqldb"
              version="2.4.0"/>
+
     </module>
 
 </overrides>

@@ -3,8 +3,8 @@
 native ("jvm")
 module examples.jpa "1.0.0" {
 
-    //don't hardcode dependency to Hibernate here
-    //use overrides.xml instead
+    //better not hardcode dependency to Hibernate or
+    //database driver here; use overrides.xml instead
 
-    import ceylon.interop.persistence "1.3.3-SNAPSHOT";
+    import ceylon.interop.persistence "1.3.3";
 }
